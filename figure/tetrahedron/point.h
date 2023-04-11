@@ -12,7 +12,7 @@ namespace miit::figure
 		/// <param name="x"> x компонента точки</param>
 		/// <param name="y"> y компонента точки</param>
 		/// <param name="z"> z компонента точки</param>
-		explicit point(double x, double y, double z);
+		point(const double x, const double y, const double z);
 
 		/// <summary>
 		/// Получить х компоненту точки
@@ -36,10 +36,10 @@ namespace miit::figure
 		/// Представляет точку в виде строки
 		/// </summary>
 		/// <returns> точка в виде строки </returns>
-		const friend std::string to_string();
+		const std::string to_string();
 
-		friend std::ostream& operator<<(std::ostream&, const point*);
-		friend std::istream& operator>>(std::istream&, const point*&);
+		friend std::ostream& operator<<(std::ostream&, const point&);
+		friend std::istream& operator>>(std::istream&, const point&);
 		friend bool operator==(const point&, const point&);
 	private:
 		double x;
