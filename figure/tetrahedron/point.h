@@ -18,19 +18,19 @@ namespace miit::figure
 		/// Получить х компоненту точки
 		/// </summary>
 		/// <returns> х компоненту точки </returns>
-		double x() const;
+		double get_x() const;
 
 		/// <summary>
 		/// Получить y компоненту точки
 		/// </summary>
 		/// <returns> y компоненту точки </returns>
-		double y() const;
+		double get_y() const;
 
 		/// <summary>
 		/// Получить z компоненту точки
 		/// </summary>
 		/// <returns> z компоненту точки </returns>
-		double z() const;
+		double get_z() const;
 
 		/// <summary>
 		/// Представляет точку в виде строки
