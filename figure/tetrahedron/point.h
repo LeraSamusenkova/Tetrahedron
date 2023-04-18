@@ -12,7 +12,7 @@ namespace miit::figure
 		/// <param name="x"> x компонента точки</param>
 		/// <param name="y"> y компонента точки</param>
 		/// <param name="z"> z компонента точки</param>
-		point(const double x, const double y, const double z);
+		point( double x,  double y,  double z);
 
 		/// <summary>
 		/// Получить х компоненту точки
@@ -39,8 +39,9 @@ namespace miit::figure
 		const std::string to_string();
 
 		friend std::ostream& operator<<(std::ostream&, const point&);
-		friend std::istream& operator>>(std::istream&, const point&);
-		friend bool operator==(const point&, const point&);
+		friend std::istream& operator>>(std::istream&,  point&);
+		friend bool operator==(const point&left, const point&right);
+		friend bool operator!=(const point&left, const point&right);
 	private:
 		double x;
 		double y;
