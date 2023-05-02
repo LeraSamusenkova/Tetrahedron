@@ -1,38 +1,46 @@
-#pragma once
-#include "sphere"
+п»ї#pragma once
+#include "../sphere/sphere.h"
 
 namespace miit::figure
 {
 	class tetrahedron
 	{
 	public:
-		/// <summary>
-		/// Создает тетраэдр по 4 вершинам
-		/// </summary>
-		/// <param name="vertex1">Вершина 1</param>
-		/// <param name="vertex2">Вершина 2</param>
-		/// <param name="vertex3">Вершина 3</param>
-		/// <param name="vertex4">Вершина 4</param>
-		tetrahedron(const point&vertex1, const point&vertex2, const point&vertex3, const point&vertex4);
+		tetrahedron();
 		
 		/// <summary>
-		/// Создает тетраэд по центру вписанной или описанной окружности и стороны тераэдра
+		/// РЎРѕР·РґР°РµС‚ С‚РµС‚СЂР°СЌРґСЂ РїРѕ 4 РІРµСЂС€РёРЅР°Рј
 		/// </summary>
-		/// <param name="circle_center">Центр сферы</param>
-		/// <param name="isinscribed">является ли окружность вписанной</param>
-		/// <param name="vertex_lenght">Длина стороны тетраэдра</param>
-		tetrahedron(const circle& circle, bool isinscribed, double vertex_lenght);
-		
-		const point& get_vertex1() const;
-		const point& get_vertex2() const;
-		const point& get_vertex3() const;
-		const point& get_vertex4() const;
+		/// <param name="vertex1">Р’РµСЂС€РёРЅР° 1</param>
+		/// <param name="vertex2">Р’РµСЂС€РёРЅР° 2</param>
+		/// <param name="vertex3">Р’РµСЂС€РёРЅР° 3</param>
+		/// <param name="vertex4">Р’РµСЂС€РёРЅР° 4</param>
+		tetrahedron(const point& vertex1, const point& vertex2, const point& vertex3, const point& vertex4);
 
+		/// <summary>
+		/// РЎРѕР·РґР°РµС‚ С‚РµС‚СЂР°СЌРґ РїРѕ С†РµРЅС‚СЂСѓ РІРїРёСЃР°РЅРЅРѕР№ РёР»Рё РѕРїРёСЃР°РЅРЅРѕР№ РѕРєСЂСѓР¶РЅРѕСЃС‚Рё Рё СЃС‚РѕСЂРѕРЅС‹ С‚РµСЂР°СЌРґСЂР°
+		/// </summary>
+		/// <param name="sphere">РЎС„РµСЂР°</param>
+		/// <param name="isinscribed">РЇРІР»СЏРµС‚СЃСЏ Р»Рё СЃС„РµСЂР° РІРїРёСЃР°РЅРЅРѕР№</param>
+		/// <param name="vertex_lenght">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ С‚РµС‚СЂР°СЌРґСЂР°</param>
+		tetrahedron(const sphere& sphere, bool isinscribed);
+		
+		point get_vertex1() const;
+		point get_vertex2() const;
+		point get_vertex3() const;
+		point get_vertex4() const;
+
+		double math_area() const;
+		double math_perimeter() const;
+
+		friend std::string to_string(const tetrahedron& tetrahedron);
+		friend std::ostream& operator<<(std::ostream& ostream, const tetrahedron& tetrahedron);
+		friend std::istream& operator>>(std::istream& istream, tetrahedron& tetrahedron);
 	private:
-		const point& vertex1;
-		const point& vertex2;
-		const point& vertex3;
-		const point& vertex4;
+		point vertex1;
+		point vertex2;
+		point vertex3;
+		point vertex4;
 
 	};
 };

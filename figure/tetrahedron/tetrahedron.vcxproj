@@ -129,10 +129,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\sphere\sphere.h" />
+    <ClInclude Include="line.h" />
     <ClInclude Include="tetrahedron.h" />
     <ClInclude Include="point.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\sphere\sphere.cpp" />
+    <ClCompile Include="line.cpp" />
     <ClCompile Include="tetrahedron.cpp">
       <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">stdcpp20</LanguageStandard>
     </ClCompile>
