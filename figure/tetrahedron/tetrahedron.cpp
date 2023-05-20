@@ -15,13 +15,15 @@ miit::figure::tetrahedron::tetrahedron(const sphere& sphere, bool isinscribed)
 		sphere.get_radius() * 6 / std::sqrt(6) :
 		sphere.get_radius() * 2 / std::sqrt(2);
 
-	this->vertex2 = sphere.project(120, 0);
-	this->vertex3 = sphere.project(120, 120);
-	this->vertex4 = sphere.project(120, 240);
+	double step = 100.0 / 3;
+
+	this->vertex2 = sphere.project(120, step * 0);
+	this->vertex3 = sphere.project(120, step * 1);
+	this->vertex4 = sphere.project(120, step * 2);
 	this->vertex1 = point(
-		(vertex2.get_x() + vertex3.get_x() + vertex4.get_x()) / 3,
-		sphere.get_center().get_y() + sphere.get_radius(),
-		(vertex2.get_z() + vertex3.get_z() + vertex4.get_z()) / 3
+		sphere.get_center().get_x(),
+		sphere.get_center().get_y() - sphere.get_radius(),
+		sphere.get_center().get_z()
 	);
 }
 
@@ -52,7 +54,7 @@ double miit::figure::tetrahedron::math_area() const
 
 double miit::figure::tetrahedron::math_perimeter() const
 {
-	return miit::figure::line(this->vertex1, this->vertex2).get_lenght();
+	return miit::figure::line(this->vertex1, this->vertex2).get_lenght() * 6;
 }
 
 std::string miit::figure::to_string(const tetrahedron& tetrahedron)

@@ -14,7 +14,7 @@ miit::figure::point miit::figure::sphere::get_center() const
 	return this->center;
 }
 
-miit::figure::point miit::figure::sphere::project(const double x_axis, const double y_axis) const
+miit::figure::point miit::figure::sphere::project(const double x_axis, const double z_perc) const
 {
 	auto x0 = center.get_x();
 	auto y0 = center.get_y();
@@ -23,6 +23,6 @@ miit::figure::point miit::figure::sphere::project(const double x_axis, const dou
 	return point(
 		x0 + radius * std::cos(x_axis),
 		y0 + radius * std::sin(x_axis),
-		z0 + radius * std::cos(y_axis)
+		z0 + (radius * 2 * z_perc / 100) - radius
 	);
 }
