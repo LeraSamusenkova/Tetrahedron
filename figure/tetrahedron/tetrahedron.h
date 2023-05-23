@@ -21,9 +21,8 @@ namespace miit::figure
 		/// Создает тетраэд по центру вписанной или описанной окружности и стороны тераэдра
 		/// </summary>
 		/// <param name="sphere">Сфера</param>
-		/// <param name="isinscribed">Является ли сфера вписанной</param>
 		/// <param name="vertex_lenght">Длина стороны тетраэдра</param>
-		tetrahedron(const sphere& sphere, bool isinscribed);
+		tetrahedron(const sphere& sphere);
 		
 		point get_vertex1() const;
 		point get_vertex2() const;

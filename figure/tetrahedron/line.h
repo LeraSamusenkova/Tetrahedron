@@ -1,4 +1,4 @@
-#pragma once 
+п»ї#pragma once 
 #include "point.h"
 
 namespace miit::figure
@@ -7,26 +7,26 @@ namespace miit::figure
 	{
 	public:
 		/// <summary>
-		/// Создание линии при помощи начальной и конечной точки
+		/// РЎРѕР·РґР°РЅРёРµ Р»РёРЅРёРё РїСЂРё РїРѕРјРѕС‰Рё РЅР°С‡Р°Р»СЊРЅРѕР№ Рё РєРѕРЅРµС‡РЅРѕР№ С‚РѕС‡РєРё
 		/// </summary>
-		/// <param name="start"> Начальная точка</param>
-		/// <param name="end">Конечная точка</param>
+		/// <param name="start"> РќР°С‡Р°Р»СЊРЅР°СЏ С‚РѕС‡РєР°</param>
+		/// <param name="end">РљРѕРЅРµС‡РЅР°СЏ С‚РѕС‡РєР°</param>
 		line(const point& start, const point& end);
 
 		/// <summary> 
-		/// Получение начальной точки стороны 
+		/// РџРѕР»СѓС‡РµРЅРёРµ РЅР°С‡Р°Р»СЊРЅРѕР№ С‚РѕС‡РєРё СЃС‚РѕСЂРѕРЅС‹ 
 		/// </summary> 
 		/// <returns></returns> 
 		point get_start() const;
 
 		/// <summary> 
-		/// Получение конечной точки стороны  
+		/// РџРѕР»СѓС‡РµРЅРёРµ РєРѕРЅРµС‡РЅРѕР№ С‚РѕС‡РєРё СЃС‚РѕСЂРѕРЅС‹  
 		/// </summary> 
 		/// <returns></returns> 
 		point get_end() const;
 
 		/// <summary> 
-		/// Получение расстояния между начальной и конечной точками 
+		/// РџРѕР»СѓС‡РµРЅРёРµ СЂР°СЃСЃС‚РѕСЏРЅРёСЏ РјРµР¶РґСѓ РЅР°С‡Р°Р»СЊРЅРѕР№ Рё РєРѕРЅРµС‡РЅРѕР№ С‚РѕС‡РєР°РјРё 
 		/// </summary> 
 		/// <returns></returns> 
 		double get_lenght() const;
